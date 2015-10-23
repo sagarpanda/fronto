@@ -1,5 +1,5 @@
 # fronto
-A Boilerplate Framework for FED (Front-End Developer).
+A Boilerplate Framework for FEDs (Front-End Developers).
 
 
 ### Tech

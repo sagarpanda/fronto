@@ -28,23 +28,10 @@ module.exports = function(grunt) {
                 },*/
                 files: {
                     'public/build/js/main.js': ['public/build/js/main.js'],
-                    'public/js/cfg.js': ['public/js/cfg.js']
+                    'public/build/js/cfg.js': ['public/build/js/cfg.js']
                 }
             }
         },
-
-        /*cssmin: {
-            target: {
-                files: [{
-                    expand: true,
-                    cwd: 'public/css/',
-                    //src: ['*.css', '!*.min.css'],
-                    src: ['*.css'],
-                    dest: 'public/build/css/',
-                    ext: '.min1.css'
-                }]
-            }
-        }*/
 
         cssmin: {
             options: {
