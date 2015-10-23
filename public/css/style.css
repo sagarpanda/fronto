@@ -1,0 +1,91 @@
+.navbar-crm{
+	border-radius: 0;
+}
+.page-header-crm{
+	margin: 0 0 20px;
+}
+.form-regulation{
+	padding-left: 15px;
+}
+.btn-go{
+	padding: 6px 30px;
+}
+.form-grid-search{
+	margin-bottom: 10px;
+}
+.grid-pagination{
+	margin: 0;
+	float: right;
+}
+.table-wrap{
+	width: 100%;
+	overflow: auto;
+}
+.table-regulation{
+	width: 1700px;
+	margin-bottom: 0;
+}
+
+.tbl-col-legal{
+	width: 200px;
+}
+.tbl-col-count{
+	width: 50px;
+}
+.tbl-col-error{
+	width: 30px;
+}
+.tbl-col-view{
+	width: 98px;
+}
+.tbl-col-approve{
+	width: 70px;
+}
+.tbl-col-comment{
+	width: 275px;
+}
+.tbl-col-audit{
+	width: 440px;
+}
+
+/* SignIn*/
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.tab-pane{
+  padding-top: 15px;
+  height: 400px;
+}

@@ -1,0 +1,1 @@
+<div style="height:180px;">Activity graph</div>
