@@ -17,11 +17,18 @@ Fronto uses a number of open source projects:
 
 ```sh
 $ npm install
+$ gem install compass
 ```
 
 ### Start Server
 ```sh
 $ npm start
+```
+
+### SCSS Build
+```sh
+$ compass compile
+$ compass watch
 ```
 
 ### Build
