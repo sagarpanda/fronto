@@ -26,20 +26,8 @@ define([
  				html: 'Settings',
  				className: 'page-header page-header-crm'
  			},{
- 				xclass: TabPanel,
- 				items: [
- 					{
- 						title: 'User Management',
- 						active: true,
- 						html: 'Description 1'
- 					}, {
- 						title: 'Roll/Access Management',
- 						html: 'Description 2'
- 					}, {
- 						title: 'Content Management',
- 						html: 'Description 3'
- 					}
- 				]
+ 				xclass: HtmlView,
+ 				html: 'text goes here...'
  			}
  		]
 

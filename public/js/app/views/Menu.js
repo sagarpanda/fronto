@@ -6,7 +6,9 @@ define(['text!templates/menu.tpl'], function(MenuTpl){
 
 		ui: {
 			home 	 : '.m_home',
-			settings : '.m_settings',
+			grid	 : '.m_grid',
+			tab		 : '.m_tab',
+			settings : '.m_settings'
 		},
 
 		template: _.template(MenuTpl),

@@ -3,8 +3,10 @@ define([
     'app/views/layouts/Home',
     'app/views/layouts/SignIn',
     'app/views/dashboard/View',
-    'app/views/settings/View'
-], function(BaseController, Home, SignIn, DashView, SettingView){
+    'app/views/settings/View',
+    'app/views/grid/View',
+    'app/views/tab/View'
+], function(BaseController, Home, SignIn, DashView, SettingView, GridView, TabView){
 
     var Controller = BaseController.extend({
 
@@ -31,6 +33,22 @@ define([
 
             var settingView = new SettingView();
             layout.container.show(settingView);
+        },
+
+        showGrid: function(){
+            var layout = this.renderLayout(Home, App.bodyRegion);
+            layout.menu.setActive('grid');
+
+            var view = new GridView();
+            layout.container.show(view);
+        },
+
+        showTab: function(){
+            var layout = this.renderLayout(Home, App.bodyRegion);
+            layout.menu.setActive('tab');
+
+            var tab = new TabView();
+            layout.container.show(tab);
         }
 
     });

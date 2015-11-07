@@ -40,7 +40,7 @@ $ grunt build
 ### Todos
 
  - Unit Test
- - Components (TabPanel, Grid)
+ - Components (TabPanel, Grid, Tooltip, Modal)
 
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does it's job. There is no need to format nicely because it shouldn't be seen. Thanks)

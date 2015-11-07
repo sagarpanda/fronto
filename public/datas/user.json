@@ -1,0 +1,25 @@
+{
+    "total": 10,
+    "success": true,
+    "action": "read",
+    "items": [
+        {
+            "id": "1",
+            "name": "Sagar Panda",
+            "email": "sagar@gmail.com",
+            "phone": "9482597715"
+        },
+        {
+            "id": "2",
+            "name": "John Player",
+            "email": "john@gmail.com",
+            "phone": "9988776655"
+        },
+        {
+            "id": "4",
+            "name": "Bill Gates",
+            "email": "billgates@gmail.com",
+            "phone": "90000100"
+        }
+    ]
+}
