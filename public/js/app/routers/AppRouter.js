@@ -9,7 +9,6 @@ define(['app/controllers/AppController'], function(AppController){
 			"home" 		: "home",
 			"signin" 	: "signin",
 			"signout" 	: "signout",
-			"settings" 	: "settings",
 			"grid" 		: "showGrid",
 			"tab" 		: "showTab"
 		},

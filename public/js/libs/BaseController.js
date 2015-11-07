@@ -1,22 +1,23 @@
 define(['marionette'], function(){
 
+    var layout = null;
+
     return Mn.Object.extend({
 
-        layout: null,
+        //layout: null,
 
         initialize: function(options){
             //console.log(options);
         },
 
         renderLayout: function(LayoutView, region){
-            var layout = null;
-            if (this.layout instanceof LayoutView) {
-                return this.layout;
+            if (layout instanceof LayoutView) {
+                return layout;
             }else{
                 layout = new LayoutView();
             };
-            region.show(layout);
             this.layout = layout;
+            region.show(layout);
             return layout;
         }
 

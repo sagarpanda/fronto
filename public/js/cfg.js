@@ -7,7 +7,7 @@ require.config({
         marionette  : 'libs/vendor/backbone.marionette.min',
         templates   : 'app/templates',
         consts      : 'app/constants/constant',
-        AppRouter   : "app/routers/AppRouter"
+        router      : "app/routers/Router"
     },
 
     deps: ["main"],
@@ -25,9 +25,9 @@ require.config({
             deps: ['marionette'],
             exports: "App"
         },
-        'AppRouter': {
+        'router': {
             deps: ['underscore', 'jquery', "marionette", 'App'],
-            exports: "AppRouter"
+            exports: "router"
         }
     }
 });

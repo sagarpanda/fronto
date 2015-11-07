@@ -17,9 +17,12 @@ define(['i18n!nls/content', 'consts'], function(content, consts){
 			bodyRegion: 'body'
 		},
 
-		onStart: function(AppRouter){
-
-			this.routers.appRouter = new AppRouter();
+		onStart: function(routers){
+			var self = this;
+			_.each(routers, function(router, key){
+				self.routers[key] = new router();
+			});
+			//this.routers.appRouter = new AppRouter();
 			Backbone.history.start();
 		}
 		

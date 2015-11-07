@@ -23,16 +23,10 @@ define([
         },
 
         signout: function(){
-            this.layout.menu.removeActive();
+            if (this.layout && this.layout.menu) {
+                this.layout.menu.removeActive();
+            };
             App.routers.appRouter.navigate('#/signin', {trigger:true});
-        },
-
-        settings: function(){
-            var layout = this.renderLayout(Home, App.bodyRegion);
-            layout.menu.setActive('settings');
-
-            var settingView = new SettingView();
-            layout.container.show(settingView);
         },
 
         showGrid: function(){
