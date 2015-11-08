@@ -1,10 +1,8 @@
-define(['backbone', 'app/models/UserModel'], function(Backbone, UserModel){
+define(['libs/Store', 'app/models/UserModel'], function(Store, UserModel){
 
-	return Backbone.Collection.extend({
+	return Store.extend({
 
 		model: UserModel,
-
-		total: 0,
 
 		url: 'datas/user.json',
 
@@ -12,5 +10,6 @@ define(['backbone', 'app/models/UserModel'], function(Backbone, UserModel){
 			this.total = response.total ? response.total : this.total;
 			return response.items;
 		}
+		
 	});
 });

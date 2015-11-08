@@ -15,7 +15,8 @@ define([
 		template: _.template(TabTpl),
 
 		onShow: function(){
-			this.grid1.show(new UserGrid);
+			userGrid = new UserGrid();
+			this.grid1.show(userGrid);
 		}
 
 	});

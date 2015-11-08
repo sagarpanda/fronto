@@ -4,7 +4,7 @@ define(['marionette'], function(){
 
     return Mn.Object.extend({
 
-        //layout: null,
+        layout: null,
 
         initialize: function(options){
             //console.log(options);

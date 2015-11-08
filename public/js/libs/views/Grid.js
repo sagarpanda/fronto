@@ -12,17 +12,13 @@ define([], function(){
 
 	return Mn.CompositeView.extend({
 
-		viewOptions: ['columns'],
+		viewOptions : ['columns'],
 
-		columns: [],
+		columns 	: [],
 
 		tagName		: 'table',
 
 		className	: 'table table-condensed table-hover',
-
-		regions: {
-			aaa: 'tbody'
-		},
 
 		constructor : function(options){ 
 			this.mergeOptions(options, this.viewOptions);

@@ -1,9 +1,9 @@
 define([
-	'libs/views/Grid', 
+	'libs/views/GridPanel', 
 	'app/stores/UserStore'
-	], function(Grid, UserStore){
+	], function(GridPanel, UserStore){
 
-	return Grid.extend({
+	return GridPanel.extend({
 
 		initialize: function(){
 			this.collection.fetch();
