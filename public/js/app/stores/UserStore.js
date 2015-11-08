@@ -4,7 +4,9 @@ define(['libs/Store', 'app/models/UserModel'], function(Store, UserModel){
 
 		model: UserModel,
 
-		url: 'datas/user.json',
+		url: function(){
+			return App.constants.url.user;
+		},
 
 		parse: function(response, options){
 			this.total = response.total ? response.total : this.total;
