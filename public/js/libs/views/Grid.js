@@ -10,6 +10,10 @@
 // });
 define([], function(){
 
+	var renderer = function(name){
+		return '<%= '+ name +' %>';
+	};
+
 	return Mn.CompositeView.extend({
 
 		viewOptions : ['columns'],
@@ -17,6 +21,8 @@ define([], function(){
 		columns 	: [],
 
 		tagName		: 'table',
+
+		childViewContainer : 'tbody',
 
 		className	: 'table table-condensed table-hover',
 
@@ -42,7 +48,11 @@ define([], function(){
 				headerAttr = this.columns[i].headerStyle ? ' style="'+this.columns[i].headerStyle+'"' : '';
 				headerAttr += this.columns[i].headerCls ? ' class="'+this.columns[i].headerCls+'"' : '';
 
-				tpl += '<td'+attr+'><%= '+ this.columns[i].dataIndex +' %></td>';
+				if (this.columns[i].renderer) {
+					tpl += '<td'+attr+'>'+ this.columns[i].renderer.call(this) +'</td>';
+				}else{
+					tpl += '<td'+attr+'>'+ renderer(this.columns[i].dataIndex) +'</td>';	
+				};
 				tplHeader += '<th'+headerAttr+'> '+ this.columns[i].header +' </th>';
 			};
 
@@ -63,7 +73,6 @@ define([], function(){
 				return _.template(tplHeader)();
 			};
 
-			this.childViewContainer = 'tbody';
 		}
 		
 	});

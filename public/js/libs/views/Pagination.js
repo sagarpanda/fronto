@@ -43,7 +43,7 @@ define(['marionette'], function(Mn){
 		},
 
 		template: function(store){
-			var tpl = '<% if(pages.length > 0){%><li data-val="prev"><a><span aria-hidden="true">«</span></a></li>\
+			var tpl = '<% if(pages.length > 1){%><li data-val="prev"><a><span aria-hidden="true">«</span></a></li>\
 				<% _.each(pages, function(count){ %>\
 				<li <% if(count === currPage){ %> class="active" <%} %> data-val="<%= count %>"><a><%= count %></a></li>\
 				<% }); %>\

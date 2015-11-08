@@ -1,7 +1,8 @@
 define([
 	'text!templates/grid.tpl',
-	'app/views/grid/UserGrid'
-	], function(TabTpl, UserGrid){
+	'app/views/grid/UserGrid',
+	'app/views/grid/CustomRender'
+	], function(TabTpl, UserGrid, CustomRender){
 
 	return Mn.LayoutView.extend({
 
@@ -15,8 +16,11 @@ define([
 		template: _.template(TabTpl),
 
 		onShow: function(){
-			userGrid = new UserGrid();
+			var userGrid = new UserGrid();
 			this.grid1.show(userGrid);
+
+			var customRender = new CustomRender();
+			this.grid2.show(customRender);
 		}
 
 	});
