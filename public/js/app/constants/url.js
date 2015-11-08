@@ -1,6 +1,6 @@
 define(function(){
 	return {
 		domain 	: '',
-		user	: 'datas/user.php'
+		user	: 'datas/user.json'
 	}
 });
