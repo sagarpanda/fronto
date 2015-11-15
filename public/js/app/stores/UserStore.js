@@ -10,6 +10,7 @@ define(['libs/Store', 'app/models/UserModel'], function(Store, UserModel){
 
 		parse: function(response, options){
 			this.total = response.total ? response.total : this.total;
+			this.calcTotalPage();
 			return response.items;
 		}
 		

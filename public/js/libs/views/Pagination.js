@@ -27,18 +27,12 @@ define(['marionette'], function(Mn){
 			var val = target.getAttribute('data-val');
 
 			if (val === 'prev') {
-				val = this.collection.currPage - 1;
-				if(val > 0){
-					this.collection.setCurrPage(val);
-				}
+				this.collection.prevPage();
 			}else if(val === 'next'){
-				val = this.collection.currPage + 1;
-				if(val <= this.totalPage){
-					this.collection.setCurrPage(val);
-				}
+				this.collection.nextPage();
 			}else{
 				val = parseInt(val, 10);
-				this.collection.setCurrPage(val);
+				this.collection.fetchPage(val);
 			};
 		},
 
@@ -52,9 +46,8 @@ define(['marionette'], function(Mn){
 		},
 
 		templateHelpers: function(){
-			var pages = Math.ceil(this.collection.total/this.collection.pageSize);
+			var pages = this.collection.totalPage;
 			if (pages > 0) {
-				this.totalPage = pages;
 				return { pages: _.range(1, pages+1), currPage: this.collection.currPage };
 			};
 			return {pages: []};

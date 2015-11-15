@@ -6,7 +6,7 @@ define([
 	return GridPanel.extend({
 
 		initialize: function(){
-			this.collection.fetch();
+			this.collection.fetchPage();
 		},
 
 		columns: [
