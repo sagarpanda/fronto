@@ -7,13 +7,16 @@ module.exports = function(grunt) {
         requirejs: {
             compile: {
                 options: {
+                    wrap: true,
                     baseUrl: "public/js",
                     mainConfigFile: "public/js/cfg.js",
-                    name: "main",
+                    name: "libs/vendor/almond",
                     optimize: "none",
                     out: "public/build/js/main.js",
                     generateSourceMaps: true,
-                    preserveLicenseComments: false
+                    preserveLicenseComments: false,
+                    almond: true,
+                    include: ['main.js']
                     //appDir: "public",
                     //dir: "public",
                 }
@@ -27,8 +30,7 @@ module.exports = function(grunt) {
                     sourceMapName: 'public/js/build/main.js.map'
                 },*/
                 files: {
-                    'public/build/js/main.js': ['public/build/js/main.js'],
-                    'public/build/js/cfg.js': ['public/build/js/cfg.js']
+                    'public/build/js/main.js': ['public/build/js/main.js']
                 }
             }
         },
@@ -52,7 +54,7 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 files: [
-                    {
+                    /*{
                         expand: true, 
                         cwd: 'public/js/libs/vendor/', 
                         src: ['require.js'], 
@@ -62,6 +64,11 @@ module.exports = function(grunt) {
                         cwd: 'public/js/', 
                         src: ['cfg.js'], 
                         dest: 'public/build/js'
+                    },*/ {
+                        expand: true, 
+                        cwd: 'public/datas/', 
+                        src: ['**'], 
+                        dest: 'public/build/datas/'
                     }
                 ]
             }
