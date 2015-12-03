@@ -89,3 +89,24 @@
   padding-top: 15px;
   height: 400px;
 }
+
+.navbar-inverse .navbar-nav > li > span{
+  line-height: 20px;
+  color: #d9edf7;
+  padding: 15px 15px;
+  position: relative;
+  display: block;
+  background-color: #2e6da4;
+  font-weight: bold;
+  text-align: center;
+}
+.navbar-inverse .navbar-nav > li > span.twoline{
+  line-height: 20px;
+  color: #d9edf7;
+  padding: 5px 15px;
+  position: relative;
+  display: block;
+  background-color: #2e6da4;
+  font-weight: bold;
+  text-align: center;
+}

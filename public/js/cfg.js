@@ -2,6 +2,7 @@ require.config({
     urlArgs : "ts="+new Date().getTime(),
     paths : {
         jquery      : 'libs/vendor/jquery-1.11.3.min',
+        bootstrap   : 'libs/vendor/bootstrap.min',
         underscore  : 'libs/vendor/underscore-min',
         backbone    : 'libs/vendor/backbone-min',
         marionette  : 'libs/vendor/backbone.marionette.min',
@@ -13,6 +14,9 @@ require.config({
     deps: ["main"],
 
     'shim': {
+        'bootstrap' : { 
+            deps :['jquery'] 
+        },
         'backbone': {
             deps: ['underscore', 'jquery'],
             exports: 'Backbone'
@@ -26,7 +30,7 @@ require.config({
             exports: "App"
         },
         'router': {
-            deps: ['underscore', 'jquery', "marionette", 'App'],
+            deps: ['underscore', 'jquery', 'bootstrap', "marionette", 'App'],
             exports: "router"
         }
     }

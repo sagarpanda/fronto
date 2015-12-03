@@ -4,7 +4,8 @@ require([
 	"backbone", 
 	"marionette", 
 	"App", 
-	"router"
+	"router", 
+	"bootstrap"
 ], function($, _, Backbone, Mn, App1, Routers){
 
     $(document).ready(function(){ App.start(Routers); });

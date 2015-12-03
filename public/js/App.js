@@ -1,20 +1,28 @@
-define(['i18n!nls/content', 'consts'], function(content, consts){
+define(['i18n!nls/content', 'consts', 'libs/Modal'], function(content, consts, Modal){
 
 	var App = Mn.Application.extend({
 
 		name: 'App',
 
 		initialize: function(){
+			var self = this;
 			this.lang = { content: content };
 			this.constants = consts;
 			this.routers = this.routers || {};
 			this.models = this.models || {};
 			this.stores = this.stores || {};
 			this.views = this.views || {};
+
+			this.modal = new Modal(self.modalRegion);
 		},
 
 		regions: {
-			bodyRegion: 'body'
+			bodyRegion: '.main',
+			modalRegion: '.region_1'
+		},
+
+		ui: {
+			modal: '.modal'
 		},
 
 		onStart: function(routers){
@@ -23,6 +31,7 @@ define(['i18n!nls/content', 'consts'], function(content, consts){
 				self.routers[key] = new router();
 			});
 			//this.routers.appRouter = new AppRouter();
+			this.ui.modal = $(this.ui.modal);
 			Backbone.history.start();
 		}
 		
