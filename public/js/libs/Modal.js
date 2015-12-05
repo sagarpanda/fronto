@@ -52,6 +52,8 @@ define(['bootstrap'], function(){
 
 	function fn(region, configs){
 
+		var configs = _.extend({size:''}, configs);
+		//var size = configs.size || '';// modal-lg, modal-sm
 		var modal = new Modal();
 		region.show(modal);
 
@@ -62,15 +64,14 @@ define(['bootstrap'], function(){
 			modal.modalBody.currentView.destroy();
 		});
 
-		this.size = 'modal-lg';// modal-lg, modal-sm
-
 		this.show = function(view, options){
+			var options = _.extend({size: configs.size}, options);
 			if (view) { 
 				modal.modalBody.show(view);
 				modal.ui.title.html(options.title);
 			};
-			if (this.size) {
-				modal.ui.dialog.addClass(this.size);
+			if (options.size) {
+				modal.ui.dialog.addClass(options.size);
 			};
 			modal.ui.modal.modal('show');
 		};
