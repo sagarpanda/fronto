@@ -23,5 +23,9 @@ define([
 
 		collection: new UserStore(),
 
+		onDestroy: function(){
+			this.collection.reset([]);
+		}
+
 	});
 });

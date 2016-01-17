@@ -32,7 +32,22 @@ define([], function(){
 			Mn.CompositeView.prototype.constructor.apply(this, arguments);
 		},
 
-		initialize: function(options){ },
+		initialize: function(options){
+			this.listenTo(this.collection, 'sync', this.onSyncSuccess);
+			this.listenTo(this.collection, 'request', this.onRequestStart);
+		},
+
+		onSyncSuccess: function(){
+			this.destroyEmptyView();
+			this.waiting = false;
+			this.checkEmpty();
+		},
+
+		onRequestStart: function(){
+			this.waiting = true;
+			this.destroyEmptyView();
+			this.checkEmpty();
+		},
 
 		createChildView: function(){
 			var tpl = '',
@@ -73,6 +88,17 @@ define([], function(){
 				return _.template(tplHeader)();
 			};
 
+		},
+
+		waiting: true,
+
+		getEmptyView: function(){
+			var msg = 'no data found';
+			if (this.waiting) { msg = 'Loading...'; };
+			
+			return Mn.LayoutView.extend({
+				template: _.template(msg)
+			});
 		}
 		
 	});
