@@ -1,11 +1,14 @@
+<% if(!waiting){ %>
+    <% if(sModel.categories.length === 0){ %>
+    No record found
+    <% }else{ %>
 <div class="form-group">
     <label class="col-sm-3 control-label">Category</label>
     <div class="col-sm-9">
         <select class="form-control">
-        <option>Public</option>
-        <option>Internal</option>
-        <option>Personal</option>
-        <option>Others</option>
+        <% for(var i=0;i<sModel.categories.length;i++){ %>
+        <option><%= sModel.categories[i] %></option>
+        <% } %>
         </select>
     </div>
 </div>
@@ -13,9 +16,9 @@
     <label class="col-sm-3 control-label">File Type</label>
     <div class="col-sm-9">
         <select class="form-control">
-        <option>Image</option>
-        <option>PDF</option>
-        <option>DOC</option>
+        <% for(var i=0;i<sModel.fileTypes.length;i++){ %>
+        <option><%= sModel.fileTypes[i] %></option>
+        <% } %>
         </select>
     </div>
 </div>
@@ -31,3 +34,7 @@
     <button type="submit" class="btn btn-default btn-go">Go</button>
     </div>
 </div>
+    <% } %>
+<% }else{ %>
+Loading...
+<% } %>

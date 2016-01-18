@@ -3,14 +3,13 @@ define([
 	'libs/views/Panel', 
 	'libs/views/HtmlView',
 	'app/views/dashboard/UploadData',
-	'app/views/dashboard/Activity'
-	], function(AddMnItems, Panel, HtmlView, UploadData, Activity){
+	'app/views/dashboard/Activity',
+	'app/models/FormModel'
+	], function(AddMnItems, Panel, HtmlView, UploadData, Activity, FormModel){
 
 	return Mn.LayoutView.extend({
 
 		className: 'dashboard',
-
-		template: false,
 
  		behaviors: {
  			appendView: {
