@@ -1,13 +1,13 @@
-define(['text!templates/signin.tpl'], function(LoginTpl){
+define(['libs/LayoutView', 'text!templates/signin.tpl'], function(LayoutView, LoginTpl){
 
-	var Screen = Mn.LayoutView.extend({
+	var Screen = LayoutView.extend({
 
 		regions: {
 			content : ".container"
 		},
 
 		events: {
-			'click button.submit': 'loginHandler'
+			'xclick button.submit': 'loginHandler',
 		},
 
 		loginHandler: function(e){

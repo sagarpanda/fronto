@@ -1,6 +1,10 @@
-define(['app/models/FormModel','text!templates/dashboard/uploaddata.tpl'], function(FormModel, UploadDataTpl){
+define([
+	'app/models/FormModel',
+	'libs/LayoutView',
+	'text!templates/dashboard/uploaddata.tpl'
+	], function(FormModel, LayoutView, UploadDataTpl){
 
-	return Mn.ItemView.extend({
+	return LayoutView.extend({
 
 		tagName: 'form',
 
@@ -24,7 +28,7 @@ define(['app/models/FormModel','text!templates/dashboard/uploaddata.tpl'], funct
 		},
 
 		events:{
-			'click button.btn-go': 'clickHandler'
+			'xclick button.btn-go': 'clickHandler'
 		},
 
 		template: function(sModel){
@@ -38,6 +42,7 @@ define(['app/models/FormModel','text!templates/dashboard/uploaddata.tpl'], funct
 
 		clickHandler: function(e){
 			e.preventDefault();
+			console.log('clicked');
 		},
 
 		onSyncSuccess: function(){
