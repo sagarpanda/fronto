@@ -4,7 +4,7 @@
 	header('Access-Control-Allow-Credentials: true');
 	header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
 
-	sleep(2);
+	//sleep(2);
 
 	function generateRandomString($length = 10) {
 
