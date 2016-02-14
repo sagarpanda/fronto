@@ -23,6 +23,7 @@ define(['marionette'], function(Mn){
 		},
 
 		onClickHandler: function(e){
+			e.preventDefault();
 			var target = e.currentTarget || e.srcElement;
 			var val = target.getAttribute('data-val');
 
@@ -37,16 +38,16 @@ define(['marionette'], function(Mn){
 		},
 
 		template: function(store){
-			var tpl = '<% if(pages.length > 1){%><li data-val="prev"><a><span aria-hidden="true">«</span></a></li>\
+			var tpl = '<% if(pages.length > 1){%><li data-val="prev"><a href="#"><span aria-hidden="true">«</span></a></li>\
 				<% _.each(pages, function(count){ %>\
-				<li <% if(count === currPage){ %> class="active" <%} %> data-val="<%= count %>"><a><%= count %></a></li>\
+				<li <% if(count === currPage){ %> class="active" <%} %> data-val="<%= count %>"><a href="#"><%= count %></a></li>\
 				<% }); %>\
-				<li data-val="next"><a><span aria-hidden="true">»</span></a></li><% } %>';
+				<li data-val="next"><a href="#"><span aria-hidden="true">»</span></a></li><% } %>';
 			return _.template(tpl)(store);
 		},
 
 		templateHelpers: function(){
-			var pages = this.collection.totalPage;
+			var pages = this.collection.totalPages;
 			if (pages > 0) {
 				return { pages: _.range(1, pages+1), currPage: this.collection.currPage };
 			};

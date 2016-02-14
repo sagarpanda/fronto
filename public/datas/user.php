@@ -4,7 +4,7 @@
 	header('Access-Control-Allow-Credentials: true');
 	header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
 
-	sleep(2);
+	//sleep(2);
 
 	function generateRandomString($length = 10) {
 
@@ -21,7 +21,7 @@
 
 	$page  = isset($_GET['page']) ? $_GET['page'] : 1;
 	$start = isset($_GET['start']) ? $_GET['start'] : 0;
-	$limit = isset($_GET['limit']) ? $_GET['limit'] : 10;
+	$limit = isset($_GET['limit']) ? $_GET['limit'] : 5;
 
 	for ($i=0; $i < $limit; $i++) { 
 		$str = generateRandomString(6);

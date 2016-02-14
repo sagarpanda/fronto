@@ -8,7 +8,7 @@ define([
 		title: 'Custom Render',
 
 		initialize: function(){
-			this.collection.fetch();
+			this.collection.fetch(1);
 		},
 
 		columns: [

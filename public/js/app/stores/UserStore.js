@@ -4,6 +4,10 @@ define(['libs/Store', 'app/models/UserModel'], function(Store, UserModel){
 
 		model: UserModel,
 
+		initialize: function(options){
+			_.extend(this, {queryParams:{}});
+		},
+
 		url: function(){
 			return App.constants.url.user;
 		},
